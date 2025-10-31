@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- charset and viewport meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calming Waves - Find Your Perfect Sound</title>
+
+    <!-- preconnect for google fonts, speeds things up -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- inter font from google -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- favicon with wave emoji, saved me from making an icon file -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌊%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+    <!-- nav bar at top, stays there when scrolling -->
+    <nav class="nav-bar" aria-label="Main navigation">
+        <div class="nav-container">
+            <!-- logo, goes back to top -->
+            <a href="#home" class="logo" aria-label="Calming Waves - Home">
+                <span class="logo-icon" aria-hidden="true">🌊</span>
+                <span class="logo-text">Calming Waves</span>
+            </a>
+            
+            <!-- nav links, jump to sections -->
+            <ul class="nav-menu" role="menubar">
+                <li role="none"><a href="#quiz" class="nav-link" role="menuitem">Quiz</a></li>
+                <li role="none"><a href="#playlists" class="nav-link" role="menuitem">Playlists</a></li>
+                <li role="none"><a href="#articles" class="nav-link" role="menuitem">Articles</a></li>
+                <li role="none"><a href="#stories" class="nav-link" role="menuitem">Stories</a></li>
+                <li role="none"><a href="#resources" class="nav-link" role="menuitem">Resources</a></li>
+                <li role="none"><a href="#contact" class="nav-link" role="menuitem">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- hero section, full height with bg image -->
+    <section class="hero" id="home" role="banner">
+        <div class="hero-content">
+            <h1 class="hero-title">Find Your Perfect Sound</h1>
+            <p class="hero-subtitle">Ever notice how a good song can totally shift your mood? That's the magic we're talking about. Take a sec and find the playlist that matches where you're at today</p>
+            
+            <!-- main buttons -->
+            <div class="hero-buttons" role="group" aria-label="Main actions">
+                <a href="#quiz" class="btn btn-primary" aria-describedby="quiz-description">
+                    <span>How Are You Feeling?</span>
+                    <span aria-hidden="true">→</span>
+                </a>
+                <a href="#playlists" class="btn btn-secondary" aria-describedby="playlists-description">
+                    <span>Browse Playlists</span>
+                    <span aria-hidden="true">🎵</span>
+                </a>
+            </div>
+            
+            <!-- hidden text for screen readers -->
+            <div id="quiz-description" class="sr-only">Take our simple mood quiz to find music that matches how you feel</div>
+            <div id="playlists-description" class="sr-only">Browse our collection of calming music playlists</div>
+        </div>
+        
+        <!-- wave decoration at bottom -->
+        <div class="wave-animation" aria-hidden="true">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none" role="img" aria-label="Decorative wave pattern">
+                <path d="M0,50 Q300,0 600,50 T1200,50 L1200,120 L0,120 Z" class="wave-path"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- quiz section with mood cards -->
+    <section class="quiz-section" id="quiz" role="main" aria-labelledby="quiz-title">
+        <div class="container">
+            <h2 class="section-title" id="quiz-title">How Are You Feeling Today?</h2>
+            <p class="section-subtitle">Pick your mood and we'll find you something perfect</p>
+            
+            <!-- mood cards grid -->
+            <div class="mood-grid">
+                <!-- calm option -->
+                <div class="mood-card">
+                    <input type="radio" name="mood" id="mood-calm" class="mood-input">
+                    <label for="mood-calm" class="mood-card-trigger"><span class="sr-only">Select calm mood</span></label>
+                    <div class="mood-icon" aria-hidden="true">😌</div>
+                    <h3>Calm</h3>
+                    <p>Need to relax and unwind</p>
+                    <!-- shows when selected -->
+                    <div class="mood-result">
+                        <h3>Ahh, Perfect Timing</h3>
+                        <p>We've got exactly what you need. Soft, gentle sounds that'll help your mind unwind. Great for when you're chilling out, reading, or just need some quiet time.</p>
+                        <a href="#playlists" class="btn btn-primary">
+                            <span>Listen Now</span>
+                            <span aria-hidden="true">🎧</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="mood-card">
+                    <input type="radio" name="mood" id="mood-energized" class="mood-input">
+                    <label for="mood-energized" class="mood-card-trigger"><span class="sr-only">Select energized mood</span></label>
+                    <div class="mood-icon" aria-hidden="true">⚡</div>
+                    <h3>Energized</h3>
+                    <p>Ready to take on the day</p>
+                    <div class="mood-result">
+                        <h3>Let's Ride This Wave</h3>
+                        <p>High energy tunes coming your way. These beats are going to keep your vibe up all day long. Perfect for when you need that extra push to get moving.</p>
+                        <a href="#playlists" class="btn btn-primary">
+                            <span>Listen Now</span>
+                            <span aria-hidden="true">🎧</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="mood-card">
+                    <input type="radio" name="mood" id="mood-focused" class="mood-input">
+                    <label for="mood-focused" class="mood-card-trigger"><span class="sr-only">Select focused mood</span></label>
+                    <div class="mood-icon" aria-hidden="true">🎯</div>
+                    <h3>Focused</h3>
+                    <p>Time to concentrate and work</p>
+                    <div class="mood-result">
+                        <h3>Time to Zone In</h3>
+                        <p>Here's the stuff that helps you tune out distractions and get stuff done. Real focus music that doesn't mess with your head.</p>
+                        <a href="#playlists" class="btn btn-primary">
+                            <span>Listen Now</span>
+                            <span aria-hidden="true">🎧</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="mood-card">
+                    <input type="radio" name="mood" id="mood-stressed" class="mood-input">
+                    <label for="mood-stressed" class="mood-card-trigger"><span class="sr-only">Select stressed mood</span></label>
+                    <div class="mood-icon" aria-hidden="true">😰</div>
+                    <h3>Stressed</h3>
+                    <p>Need to reduce anxiety</p>
+                    <div class="mood-result">
+                        <h3>You Got This</h3>
+                        <p>Take a deep breath. These calming sounds will help you slow down and find your center again when everything feels overwhelming.</p>
+                        <a href="#playlists" class="btn btn-primary">
+                            <span>Listen Now</span>
+                            <span aria-hidden="true">🎧</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- playlists, cards link to youtube -->
+    <section class="playlists-section" id="playlists" aria-labelledby="playlists-title">
+        <div class="container">
+            <h2 class="section-title" id="playlists-title">Our Playlists</h2>
+            <p class="section-subtitle">Music that actually helps, no fluff</p>
+            
+            <!-- playlist cards -->
+            <div class="playlist-grid" role="list" aria-label="Wellness playlists">
+                <!-- deep focus -->
+                <a href="https://youtu.be/oPVte6aMprI" target="_blank" rel="noopener noreferrer" class="playlist-card">
+                    <div class="playlist-image focus-bg">
+                        <span class="playlist-icon">🎵</span>
+                    </div>
+                    <div class="playlist-info">
+                        <h3>Deep Focus</h3>
+                        <p>Zone out distractions and actually get stuff done. This one's for when you need to lock in</p>
+                        <span class="playlist-duration">2 hours • 24 tracks</span>
+                    </div>
+                </a>
+                
+                <!-- sleep -->
+                <a href="https://youtu.be/1ZYbU82GVz4" target="_blank" rel="noopener noreferrer" class="playlist-card">
+                    <div class="playlist-image sleep-bg">
+                        <span class="playlist-icon">🌙</span>
+                    </div>
+                    <div class="playlist-info">
+                        <h3>Sleep Soundly</h3>
+                        <p>Those nights when your brain won't shut off? This helps</p>
+                        <span class="playlist-duration">3 hours • 18 tracks</span>
+                    </div>
+                </a>
+                
+                <!-- stress relief -->
+                <a href="https://youtu.be/I3OJUwILelU" target="_blank" rel="noopener noreferrer" class="playlist-card">
+                    <div class="playlist-image relief-bg">
+                        <span class="playlist-icon">🌿</span>
+                    </div>
+                    <div class="playlist-info">
+                        <h3>Stress Relief</h3>
+                        <p>When everything's too much, these sounds help you just breathe</p>
+                        <span class="playlist-duration">90 min • 20 tracks</span>
+                    </div>
+                </a>
+                
+                <!-- morning energy -->
+                <a href="https://youtu.be/3iFjjsEgLkA" target="_blank" rel="noopener noreferrer" class="playlist-card">
+                    <div class="playlist-image energy-bg">
+                        <span class="playlist-icon">☀️</span>
+                    </div>
+                    <div class="playlist-info">
+                        <h3>Morning Energy</h3>
+                        <p>Jumpstart your day with beats that actually get you moving</p>
+                        <span class="playlist-duration">60 min • 15 tracks</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- info section about music therapy -->
+    <section class="info-section" id="articles">
+        <div class="container">
+            <h2 class="section-title">Why This Works</h2>
+            <p class="section-subtitle">No BS, just real talk about how music helps</p>
+            
+            <!-- benefits list -->
+            <div class="info-content">
+                <ul class="benefits-list">
+                    <li><strong>You'll breathe better</strong> - Slow music actually slows your heart down. Science is wild</li>
+                    <li><strong>It makes you happier</strong> - Those dopamine hits? Real. Good music triggers them</li>
+                    <li><strong>Lock in your focus</strong> - The right track can block out all the noise and help you concentrate</li>
+                    <li><strong>Sleep gets easier</strong> - Quiet tunes before bed help your brain finally chill out</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- testimonials section -->
+    <section class="playlists-section" id="stories">
+        <div class="container">
+            <h2 class="section-title">Real People, Real Results</h2>
+            <p class="section-subtitle">See what's working for others</p>
+            
+            <!-- story cards -->
+            <div class="playlist-grid">
+                <div class="story-card">
+                    <div class="story-icon">💙</div>
+                    <h3>Sarah</h3>
+                    <p>"Okay so I was skeptical at first. My anxiety was pretty rough and music wasn't something I thought would help. But man, these playlists during my walks? Game changer. My head finally stops spinning."</p>
+                </div>
+                
+                <div class="story-card">
+                    <div class="story-icon">✨</div>
+                    <h3>Mark</h3>
+                    <p>"ADHD here. Work was always a battle to stay focused. Tried the focus playlists and wow. I'm not saying I'm a productivity god now, but I actually get stuff done without losing track every 5 minutes."</p>
+                </div>
+                
+                <div class="story-card">
+                    <div class="story-icon">🌙</div>
+                    <h3>Emma</h3>
+                    <p>"Sleep was a nightmare for me, literally. These sleep playlists tho? I do my whole bedtime routine now and actually fall asleep. Didn't think that was possible tbh."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- resources section -->
+    <section class="info-section" id="resources">
+        <div class="container">
+            <h2 class="section-title">Easy Ways to Use This</h2>
+            <p class="section-subtitle">Little things that actually help</p>
+            
+            <!-- resource cards -->
+            <div class="playlist-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">🌅</div>
+                    <h3>Morning Vibe</h3>
+                    <p>Throw on something upbeat while you're getting ready. Makes a huge difference to start positive.</p>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-icon">🧘</div>
+                    <h3>Quick Reset</h3>
+                    <p>Take 5 minutes here and there, just put your headphones on and zone out. Your brain will thank you.</p>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-icon">💤</div>
+                    <h3>Bedtime Routine</h3>
+                    <p>Play something chill before bed. Gets your body in the right headspace to actually sleep.</p>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-icon">🤝</div>
+                    <h3>Share It</h3>
+                    <p>If something helped you, pass it on. No one's dealing with this alone.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- contact section -->
+    <section class="quiz-section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Let's Chat</h2>
+            <p class="section-subtitle">Questions? Ideas? Just want to say hi? We're here for it</p>
+            
+            <!-- form and info -->
+            <div class="contact-content">
+                <form class="contact-form" action="#" method="post">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required placeholder="What should we call you?">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" required placeholder="How can we reach you back?">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" rows="6" required placeholder="Tell us what's on your mind..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">
+                        <span>Send Message</span>
+                        <span aria-hidden="true">✉️</span>
+                    </button>
+                </form>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <div>
+                            <h4>Email Us</h4>
+                            <p>hello@calmingwaves.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">💬</span>
+                        <div>
+                            <h4>We'll Get Back</h4>
+                            <p>Usually within a day, promise</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- branding -->
+                <div class="footer-section">
+                    <h3>Calming Waves</h3>
+                    <p>Music that helps, for real</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Check This Out</h4>
+                    <ul class="footer-links">
+                        <li><a href="#quiz">Quiz</a></li>
+                        <li><a href="#playlists">Playlists</a></li>
+                        <li><a href="#articles">Articles</a></li>
+                        <li><a href="#stories">Stories</a></li>
+                        <li><a href="#resources">Resources</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Who We Are</h4>
+                    <p>We actually care about helping people feel better. Music's just our thing</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Calming Waves. All rights reserved. Senuja Rajakaruna 10646217</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+
